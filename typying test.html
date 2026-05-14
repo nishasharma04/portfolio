@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Test</title>
+    <style>body {
+    font-family: Arial;
+    background: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main Box */
+.container {
+    background:pink;
+    padding: 30px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Input Field */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Textareas */
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    resize: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Result */
+#result {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}</style>>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Typing Test</h1>
+
+        <!-- Name Field -->
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <!-- Generated Text -->
+        <label>Text to Type:</label>
+        <textarea id="givenText" readonly>
+Practice makes a person perfect. Typing fast requires accuracy and consistency.
+        </textarea>
+
+        <!-- User Input -->
+        <label>Your Typing:</label>
+        <textarea id="userText" placeholder="Start typing here..."></textarea>
+
+        <!-- Result -->
+        <p id="result"></p>
+
+        <button onclick="checkTyping()">Check Result</button>
+
+    </div>
+
+    <script>function checkTyping() {
+    let name = document.getElementById("name").value;
+    let given = document.getElementById("givenText").value.trim();
+    let user = document.getElementById("userText").value.trim();
+    let result = document.getElementById("result");
+
+    if (name === "") {
+        result.innerHTML = "Please enter your name!";
+        return;
+    }
+
+    if (given === user) {
+        result.innerHTML = name + ", Perfect typing! ✅";
+    } else {
+        result.innerHTML = name + ", Keep practicing ❌";
+    }
+}</script>
+</body>
+</html>

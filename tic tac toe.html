@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <style>body {
+    text-align: center;
+    font-family: Arial;
+    background: #1e293b;
+    color: white;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.game {
+    width: 300px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: white;
+    color: black;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box:hover {
+    background: lightgray;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: purple;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}</style>
+</head>
+<body>
+
+    <h1>Tic Tac Toe</h1>
+
+    <div class="game">
+        <div class="box" onclick="play(this)"></div>
+        <div class="box" onclick="play(this)"></div>
+        <div class="box" onclick="play(this)"></div>
+        <div class="box" onclick="play(this)"></div>
+        <div class="box" onclick="play(this)"></div>
+        <div class="box" onclick="play(this)"></div>
+        <div class="box" onclick="play(this)"></div>
+        <div class="box" onclick="play(this)"></div>
+        <div class="box" onclick="play(this)"></div>
+    </div>
+
+    <h2 id="status">Player X Turn</h2>
+
+    <button onclick="resetGame()">Reset Game</button>
+
+    <script>let currentPlayer = "X";
+let boxes = document.querySelectorAll(".box");
+let statusText = document.getElementById("status");
+
+function play(box) {
+    if (box.innerHTML === "") {
+        box.innerHTML = currentPlayer;
+
+        if (checkWin()) {
+            statusText.innerHTML = "Player " + currentPlayer + " Wins!";
+            disableGame();
+            return;
+        }
+
+        if (checkDraw()) {
+            statusText.innerHTML = "Game Draw!";
+            return;
+        }
+
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+        statusText.innerHTML = "Player " + currentPlayer + " Turn";
+    }
+}
+
+function checkWin() {
+    let winPatterns = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+    ];
+
+    return winPatterns.some(pattern => {
+        let [a,b,c] = pattern;
+        return boxes[a].innerHTML &&
+               boxes[a].innerHTML === boxes[b].innerHTML &&
+               boxes[a].innerHTML === boxes[c].innerHTML;
+    });
+}
+
+function checkDraw() {
+    return [...boxes].every(box => box.innerHTML !== "");
+}
+
+function disableGame() {
+    boxes.forEach(box => box.onclick = null);
+}
+
+function resetGame() {
+    boxes.forEach(box => {
+        box.innerHTML = "";
+        box.onclick = function() { play(box); };
+    });
+    currentPlayer = "X";
+    statusText.innerHTML = "Player X Turn";
+}</script>
+</body>
+</html>
