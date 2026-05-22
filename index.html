@@ -1005,25 +1005,11 @@ img{
     .contact-form{
         padding: 20px;
     }
-}
-    #particles-js{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background: linear-gradient(
-        135deg,
-        #0f172a,
-        #111827,
-        #1e1b4b
-    );
-}
+
     </style>
 </head>
 <body>
-<div id="particles-js"></div>
+
     
     <!-- Welcome Modal -->
     <div id="welcome-modal">
@@ -1033,7 +1019,7 @@ img{
             <button onclick="closeModal()" class="submit-btn">Enter Space</button>
         </div>
     </div>
-
+<div id="particles-js"></div>
     <nav class="navbar">
         <div class="logo">Portfolio</div>
         <ul class="nav-links">
@@ -1049,10 +1035,20 @@ img{
     <section class="hero">
         <img src="my.jpeg" alt="Nisha" class="profile-img">
         <h1 class="reveal">Hey, I'm Nisha</h1>
-        <h2 class="reveal">Web Designer</h2>
-    <p>“I, Nisha, am a passionate Web Designer skilled in HTML, CSS, JavaScript, jquery,and  PHP as well as python. I have developed several mini projects to strengthen my practical knowledge and creativity. I am seeking an opportunity to apply my skills, learn from real-world experiences, and grow in the field of web design and development.”“As a web developer, I will help the company by designing and developing responsive websites, optimizing performance, and ensuring a smooth user experience. I will bring creativity, problem-solving skills, and a willingness to learn, helping the company achieve its digital goals.”
+        
+<h2 class="typing-text">
+    I'm <span id="changing-text"></span>
+</h2>
 
-</p>    
+<p>
+Passionate Web Developer and Creative Designer skilled in
+HTML, CSS, JavaScript, jQuery, PHP and Python.
+I build modern, responsive and user-friendly websites
+with smooth performance and attractive UI design.
+</p>
+
+   
+   
 <div class="hero-buttons">
     <a href="Nisha_Resume.docx" download class="download-btn">
         <i class="fas fa-download"></i> Download Resume
@@ -1062,7 +1058,26 @@ img{
 
     <section id="about">
     <h2 class="section-title">About Me</h2>
+<h2 class="section-title">
+My Journey & Experience
+</h2>
 
+<div class="about-intro">
+
+<p>
+I am a passionate and creative Web Developer with strong
+skills in HTML, CSS, JavaScript, jQuery, PHP and Python.
+I enjoy designing modern, responsive and user-friendly
+websites that deliver smooth user experiences.
+
+I have developed multiple mini projects to improve my
+practical knowledge and problem-solving skills.
+My goal is to continuously learn new technologies,
+create innovative digital experiences and grow as a
+professional developer in the IT industry.
+</p>
+
+</div>
     <div class="about-grid">
 
         <div class="about-card reveal">
@@ -1275,6 +1290,7 @@ img{
         <p>© created and buits with💖by Nisha.2026</p>
     </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
 function closeModal() {
     document.getElementById('welcome-modal').classList.add('hidden');
@@ -1317,6 +1333,322 @@ document.getElementById('portfolioForm').addEventListener('submit', function(e) 
     this.reset();
 });
         
+
+const texts = [
+    "Web Developer",
+    "UI Designer",
+    "Freelancer",
+    "YouTuber"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+    if(count === texts.length){
+        count = 0;
+    }
+
+    currentText = texts[count];
+
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById("changing-text").textContent = letter;
+
+    if(letter.length === currentText.length){
+
+        count++;
+        index = 0;
+
+        setTimeout(type, 1500);
+
+    }else{
+
+        setTimeout(type, 120);
+    }
+
+})();
+
+/* PARTICLES */
+
+particlesJS("particles-js", {
+
+particles:{
+number:{
+value:100
+},
+
+color:{
+value:["#8b5cf6","#ec4899","#ffffff"]
+},
+
+shape:{
+type:"circle"
+},
+
+opacity:{
+value:0.5
+},
+
+size:{
+value:4,
+random:true
+},
+
+line_linked:{
+enable:true,
+distance:150,
+color:"#8b5cf6",
+opacity:0.3
+},
+
+move:{
+enable:true,
+speed:2
+}
+}
+
+});
+
+const texts = [
+    "Web Developer",
+    "UI Designer",
+    "Freelancer",
+    "YouTuber"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+    if(count === texts.length){
+        count = 0;
+    }
+
+    currentText = texts[count];
+
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById("changing-text").textContent = letter;
+
+    if(letter.length === currentText.length){
+
+        count++;
+        index = 0;
+
+        setTimeout(type, 1500);
+
+    }else{
+
+        setTimeout(type, 120);
+    }
+
+})();
+
+/* PARTICLES */
+
+particlesJS("particles-js", {
+
+particles:{
+number:{
+value:100
+},
+
+color:{
+value:["#8b5cf6","#ec4899","#ffffff"]
+},
+
+shape:{
+type:"circle"
+},
+
+opacity:{
+value:0.5
+},
+
+size:{
+value:4,
+random:true
+},
+
+line_linked:{
+enable:true,
+distance:150,
+color:"#8b5cf6",
+opacity:0.3
+},
+
+move:{
+enable:true,
+speed:2
+}
+}
+
+});
+
+const texts = [
+    "Web Developer",
+    "UI Designer",
+    "Freelancer",
+    "YouTuber"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+    if(count === texts.length){
+        count = 0;
+    }
+
+    currentText = texts[count];
+
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById("changing-text").textContent = letter;
+
+    if(letter.length === currentText.length){
+
+        count++;
+        index = 0;
+
+        setTimeout(type, 1500);
+
+    }else{
+
+        setTimeout(type, 120);
+    }
+
+})();
+
+/* PARTICLES */
+
+particlesJS("particles-js", {
+
+particles:{
+number:{
+value:100
+},
+
+color:{
+value:["#8b5cf6","#ec4899","#ffffff"]
+},
+
+shape:{
+type:"circle"
+},
+
+opacity:{
+value:0.5
+},
+
+size:{
+value:4,
+random:true
+},
+
+line_linked:{
+enable:true,
+distance:150,
+color:"#8b5cf6",
+opacity:0.3
+},
+
+move:{
+enable:true,
+speed:2
+}
+}
+
+});
+
+const texts = [
+    "Web Developer",
+    "UI Designer",
+    "Freelancer",
+    "YouTuber"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+    if(count === texts.length){
+        count = 0;
+    }
+
+    currentText = texts[count];
+
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById("changing-text").textContent = letter;
+
+    if(letter.length === currentText.length){
+
+        count++;
+        index = 0;
+
+        setTimeout(type, 1500);
+
+    }else{
+
+        setTimeout(type, 120);
+    }
+
+})();
+
+/* PARTICLES */
+
+particlesJS("particles-js", {
+
+particles:{
+number:{
+value:100
+},
+
+color:{
+value:["#8b5cf6","#ec4899","#ffffff"]
+},
+
+shape:{
+type:"circle"
+},
+
+opacity:{
+value:0.5
+},
+
+size:{
+value:4,
+random:true
+},
+
+line_linked:{
+enable:true,
+distance:150,
+color:"#8b5cf6",
+opacity:0.3
+},
+
+move:{
+enable:true,
+speed:2
+}
+}
+
+});
 
 
 
